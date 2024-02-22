@@ -19,9 +19,9 @@ import java.net.URL;
     private static final String USER_AGENT = "Mozilla/5.0";
     private static final String GET_URL = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=fb&apikey=Q1QZFVJQ21K7C6XM";
 
-    public static void main(String[] args) throws IOException {
+    public String getClass (String clase ) throws IOException {
 
-        URL obj = new URL(GET_URL);
+        URL obj = new URL(GET_URL + clase);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
         con.setRequestMethod("GET");
         con.setRequestProperty("User-Agent", USER_AGENT);
@@ -47,6 +47,9 @@ import java.net.URL;
             System.out.println("GET request not worked");
         }
         System.out.println("GET DONE");
+        return "{}";
     }
+
+   
 
 }
